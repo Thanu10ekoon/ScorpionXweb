@@ -3,16 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import { Github, Facebook, Linkedin } from 'lucide-react';
 
 const teamMembers = [
-  {
-    name: "Ramishka Thennakoon",
-    role: "Full-stack Developer",
-    bio: "Full-stack developer with expertise in backend development",
-    image: "/Ramishka.jpg",
-    social: {
-      github: "https://github.com/ramishka-devx",
-      facebook: "https://facebook.com/ramishka.geenath.7"
-    }
-  },
+  
   {
     name: "Thanujaya Tennekoon",
     role: "Lead Developer and AI Enthusiast",
@@ -21,6 +12,16 @@ const teamMembers = [
     social: {
       github: "https://github.com/Thanu10ekoon",
       linkedin: "https://linkedin.com/in/thanujaya-tennekoon-b9a155271"
+    }
+  },
+  {
+    name: "Ramishka Thennakoon",
+    role: "Full-stack Developer",
+    bio: "Full-stack developer with expertise in backend development",
+    image: "/Ramishka.jpg",
+    social: {
+      github: "https://github.com/ramishka-devx",
+      facebook: "https://facebook.com/ramishka.geenath.7"
     }
   },
   {
