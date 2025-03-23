@@ -64,47 +64,39 @@ export default function Team() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 place-items-center mb-8">
+        <div className="flex flex-col items-center gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 w-80"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 w-full max-w-md"
           >
             <div className="text-center">
               <img src={teamMembers[0].image} alt={teamMembers[0].name} className="w-32 h-32 mx-auto mb-4 rounded-full object-cover border-4 border-purple-500" />
               <h3 className="text-xl font-semibold mb-2 dark:text-white">{teamMembers[0].name}</h3>
               <p className="text-purple-600 dark:text-purple-400 mb-3">{teamMembers[0].role}</p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">{teamMembers[0].bio}</p>
-              <div className="flex justify-center space-x-4">
-                {teamMembers[0].social.github && <a href={teamMembers[0].social.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"><Github className="w-5 h-5" /></a>}
-                {teamMembers[0].social.linkedin && <a href={teamMembers[0].social.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"><Linkedin className="w-5 h-5" /></a>}
-              </div>
             </div>
           </motion.div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {teamMembers.slice(1).map((member, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
-            >
-              <div className="text-center">
-                <img src={member.image} alt={member.name} className="w-32 h-32 mx-auto mb-4 rounded-full object-cover border-4 border-purple-500" />
-                <h3 className="text-xl font-semibold mb-2 dark:text-white">{member.name}</h3>
-                <p className="text-purple-600 dark:text-purple-400 mb-3">{member.role}</p>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{member.bio}</p>
-                <div className="flex justify-center space-x-4">
-                  {member.social.github && <a href={member.social.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"><Github className="w-5 h-5" /></a>}
-                  {member.social.facebook && <a href={member.social.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400"><Facebook className="w-5 h-5" /></a>}
+          <div className="grid md:grid-cols-3 gap-8">
+            {teamMembers.slice(1).map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+              >
+                <div className="text-center">
+                  <img src={member.image} alt={member.name} className="w-32 h-32 mx-auto mb-4 rounded-full object-cover border-4 border-purple-500" />
+                  <h3 className="text-xl font-semibold mb-2 dark:text-white">{member.name}</h3>
+                  <p className="text-purple-600 dark:text-purple-400 mb-3">{member.role}</p>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">{member.bio}</p>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
