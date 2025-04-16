@@ -16,10 +16,10 @@ const achievements = [
     link: "https://web.facebook.com/share/p/1B3j5SttsV/"
   },
   {
-    title: "Top 10 in Red Cypher 1.0, Haxtreme 2.0",
+    title: "Finalists of CodeX by Codejam of CSE, UOM",
     description: "Experiencing excellence in coding competitions",
     icon: Star,
-    link: "https://web.facebook.com/share/14uvnidbw8/"
+    link: "https://www.linkedin.com/posts/thanujaya-tennekoon-b9a155271_codex-scorpionx-finalists-activity-7315706641327235072-hYTM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEJoWWYB-le4TFfH2prq-kEX6-DJwlbmxwM"
   }
 ];
 

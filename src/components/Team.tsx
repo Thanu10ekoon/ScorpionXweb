@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Github, Facebook, Linkedin } from 'lucide-react';
 
 const teamMembers = [
   {

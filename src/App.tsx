@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Sun, Moon } from 'lucide-react';
 import Hero from './components/Hero';
 import About from './components/About';
-import Team from './components/Team';
 import Achievements from './components/Achievements';
+import Gallery from './components/Gallery';
+import Team from './components/Team';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -47,6 +48,7 @@ function App() {
         <Hero />
         <About />
         <Achievements />
+        <Gallery />
         <Team />
       </main>
     </div>
