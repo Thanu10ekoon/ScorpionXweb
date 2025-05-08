@@ -2,9 +2,11 @@ import { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const images = [
+  '/gallery01.jpg',
+  '/gallery02.jpg',
   '/gallery1.jpg',
-  '/gallery2.jpg',
   '/gallery3.jpg',
+  '/gallery2.jpg',
   '/gallery4.jpg',
   '/gallery5.jpg',
   '/gallery6.jpg',

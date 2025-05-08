@@ -4,23 +4,24 @@ import { Award, Trophy, Star } from 'lucide-react';
 
 const achievements = [
   {
+    title: "CodeX by UoM Champions",
+    description: "Champions (1st Place) of the CodeX by CodeJam Coding, Development and Algorithmic Challenge organized by the Department of Computer Science & Engineering(CSE), University of Moratuwa",
+    icon: Trophy,
+    link: "https://web.facebook.com/share/p/1H3o3QqwCu/"
+  },
+  {
     title: "BitCode V5.0 2nd Runners Up",
     description: "2nd Runners up of the BitCode V5.0 Inter-University National Hackathon",
-    icon: Trophy,
+    icon: Award,
     link: "https://web.facebook.com/share/p/161eSHnBEf/"
   },
   {
     title: "VoltCast 1.0 2nd Runners Up",
     description: "2nd Runners up of the VoltCast 1.0 Intra-University Ideathon",
-    icon: Award,
-    link: "https://web.facebook.com/share/p/1B3j5SttsV/"
-  },
-  {
-    title: "Finalists of CodeX by Codejam of CSE, UOM",
-    description: "Experiencing excellence in coding competitions",
     icon: Star,
-    link: "https://www.linkedin.com/posts/thanujaya-tennekoon-b9a155271_codex-scorpionx-finalists-activity-7315706641327235072-hYTM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEJoWWYB-le4TFfH2prq-kEX6-DJwlbmxwM"
+    link: "https://web.facebook.com/share/p/1B3j5SttsV/"
   }
+  
 ];
 
 export default function Achievements() {
