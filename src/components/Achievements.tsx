@@ -16,10 +16,10 @@ const achievements = [
     link: "https://web.facebook.com/share/p/161eSHnBEf/"
   },
   {
-    title: "VoltCast 1.0 2nd Runners Up",
-    description: "2nd Runners up of the VoltCast 1.0 Intra-University Ideathon",
+    title: "Nexora 1.0, Red Cypher 1.0 Finalists",
+    description: "2nd Runners up of the Nexora 1.0, Red Cypher 1.0 Final",
     icon: Star,
-    link: "https://web.facebook.com/share/p/1B3j5SttsV/"
+    link: "https://web.facebook.com/share/p/16dFgjMr6X/"
   }
   
 ];
