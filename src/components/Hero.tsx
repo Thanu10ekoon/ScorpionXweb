@@ -25,7 +25,7 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300"
-            onClick={() => window.location.href = "https://github.com/Thanu10ekoon/CoRe_Test"}
+            onClick={() => window.location.href = "https://www.linkedin.com/posts/thanujaya-tennekoon-b9a155271_launched-the-maintenance-complaint-management-activity-7348911008561713152-4Zfa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEJoWWYB-le4TFfH2prq-kEX6-DJwlbmxwM"}
           >
             Explore Our Projects
           </motion.button>

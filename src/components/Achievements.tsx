@@ -1,25 +1,29 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Award, Trophy, Star } from 'lucide-react';
+import { useState } from 'react';
 
 const achievements = [
   {
     title: "CodeX by UoM Champions",
     description: "Champions (1st Place) of the CodeX by CodeJam Coding, Development and Algorithmic Challenge organized by the Department of Computer Science & Engineering(CSE), University of Moratuwa",
     icon: Trophy,
-    link: "https://web.facebook.com/share/p/1H3o3QqwCu/"
+    link: "https://web.facebook.com/share/p/19HhzoSpTg/",
+    hoverImage: "/gallery01.jpg"
   },
   {
     title: "BitCode V5.0 2nd Runners Up",
     description: "2nd Runners up of the BitCode V5.0 Inter-University National Hackathon",
     icon: Award,
-    link: "https://web.facebook.com/share/p/161eSHnBEf/"
+    link: "https://web.facebook.com/share/p/161eSHnBEf/",
+    hoverImage: "/gallery02.jpg"
   },
   {
     title: "Nexora 1.0, Red Cypher 1.0 Finalists",
     description: "2nd Runners up of the Nexora 1.0, Red Cypher 1.0 Final",
     icon: Star,
-    link: "https://web.facebook.com/share/p/16dFgjMr6X/"
+    link: "https://web.facebook.com/share/p/16dFgjMr6X/",
+    hoverImage: null
   }
   
 ];
@@ -29,6 +33,9 @@ export default function Achievements() {
     triggerOnce: true,
     threshold: 0.1
   });
+  
+  const [hoveredImage, setHoveredImage] = useState<string | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <section className="py-20 bg-white dark:bg-gray-800" id="achievements">
@@ -49,6 +56,30 @@ export default function Achievements() {
         <div className="relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-purple-200 dark:bg-purple-900"></div>
           
+          {/* Hover Image Display */}
+          {hoveredImage && hoveredIndex !== null && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+              className={`absolute z-20 pointer-events-none ${
+                hoveredIndex % 2 === 0 
+                  ? 'left-1/2 ml-8' 
+                  : 'right-1/2 mr-8'
+              }`}
+              style={{ 
+                top: `${hoveredIndex * 180 + 30}px`
+              }}
+            >
+              <img 
+                src={hoveredImage} 
+                alt="Achievement" 
+                className="w-56 h-40 object-cover rounded-xl shadow-2xl border-4 border-purple-500"
+              />
+            </motion.div>
+          )}
+          
           {achievements.map((achievement, index) => (
             <motion.div
               key={index}
@@ -63,8 +94,18 @@ export default function Achievements() {
                 index % 2 === 0 ? 'justify-end pr-8' : 'justify-start pl-8'
               }`}>
                 <div
-                  className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg max-w-md cursor-pointer"
+                  className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg max-w-md cursor-pointer hover:shadow-xl transition-all duration-300"
                   onClick={() => achievement.link && window.open(achievement.link, "_blank")}
+                  onMouseEnter={() => {
+                    if (achievement.hoverImage) {
+                      setHoveredImage(achievement.hoverImage);
+                      setHoveredIndex(index);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredImage(null);
+                    setHoveredIndex(null);
+                  }}
                 >
                   <div className="flex items-center mb-4">
                     <achievement.icon className="w-8 h-8 text-purple-600 dark:text-purple-400 mr-3" />

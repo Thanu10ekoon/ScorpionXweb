@@ -7,9 +7,12 @@ import Gallery from './components/Gallery';
 import Team from './components/Team';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
+    // Set initial dark mode
+    document.documentElement.classList.add('dark');
+    
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {
