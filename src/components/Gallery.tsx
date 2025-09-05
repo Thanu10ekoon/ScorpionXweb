@@ -4,14 +4,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 const images = [
   '/gallery01.jpg',
   '/gallery02.jpg',
+  './Algothon1.jpg',
+  './Algothon2.jpg',
   '/gallery1.jpg',
   '/gallery3.jpg',
+  'Algothon3.jpg',
   '/gallery2.jpg',
   '/gallery4.jpg',
   '/gallery5.jpg',
   '/gallery6.jpg',
   '/gallery7.jpg',
   'gallery09.jpg',
+  'Algothon4.jpg',
 ];
 
 export default function Gallery() {

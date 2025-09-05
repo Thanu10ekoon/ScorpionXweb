@@ -16,14 +16,14 @@ const achievements = [
     description: "2nd Runners up of the BitCode V5.0 Inter-University National Hackathon",
     icon: Award,
     link: "https://web.facebook.com/share/p/161eSHnBEf/",
-    hoverImage: "/gallery02.jpg"
+    hoverImage: "/gallery1.jpg"
   },
   {
-    title: "Nexora 1.0, Red Cypher 1.0 Finalists",
-    description: "2nd Runners up of the Nexora 1.0, Red Cypher 1.0 Final",
-    icon: Star,
-    link: "https://web.facebook.com/share/p/16dFgjMr6X/",
-    hoverImage: null
+    title: "{Algothon} 2nd Runners Up",
+    description: "2nd Runners up of the {Algothon} in Codefest 2025 by SLIIT",
+    icon: Award,
+    link: "https://web.facebook.com/share/1FPCcEUrXb/",
+    hoverImage: 'Algothon1.jpg'
   }
   
 ];
