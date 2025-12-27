@@ -22,19 +22,19 @@ function App() {
 
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
-      <nav className="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
+      <nav className="fixed w-full z-50 bg-[#eaf6ff]/85 dark:bg-[#0a1224]/90 backdrop-blur-sm border-b border-[#00b8ff]/30 dark:border-[#15c6d5]/30">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <img src="/logo.png" alt="Scorpion X Logo" className="h-10 w-auto mr-2 rounded-lg" />
-              <span className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+              <span className="text-2xl font-bold text-[#00b8ff] dark:text-[#15c6d5]">
                 Scorpion X
               </span>
             </div>
             <div className="flex items-center space-x-4">
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="p-2 rounded-lg hover:bg-[#00b8ff]/15 dark:hover:bg-[#15c6d5]/10 transition-colors"
               >
                 {darkMode ? (
                   <Sun className="w-5 h-5 text-yellow-500" />

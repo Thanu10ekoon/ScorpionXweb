@@ -22,7 +22,7 @@ const achievements = [
     title: "{Algothon} 2nd Runners Up",
     description: "2nd Runners up of the {Algothon} in Codefest 2025 by SLIIT",
     icon: Award,
-    link: "https://web.facebook.com/share/1FPCcEUrXb/",
+    link: "https://www.eng.ruh.ac.lk/deie/team-scorpion-x-secures-2nd-runners-up-at-algothon-2025/",
     hoverImage: 'Algothon1.jpg'
   }
   
@@ -38,7 +38,7 @@ export default function Achievements() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-800" id="achievements">
+    <section className="py-20 bg-[#eaf6ff] dark:bg-[#0f1a2e]" id="achievements">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -47,14 +47,14 @@ export default function Achievements() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 dark:text-white">Our Achievements</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-[#0b132b] dark:text-white">Our Achievements</h2>
+          <p className="text-lg text-[#1c2f4a] dark:text-gray-200 max-w-3xl mx-auto">
             Celebrating our milestones and recognition in the tech industry
           </p>
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-purple-200 dark:bg-purple-900"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#00b8ff]/35 dark:bg-[#15c6d5]/25"></div>
           
           {/* Hover Image Display */}
           {hoveredImage && hoveredIndex !== null && (
@@ -64,18 +64,18 @@ export default function Achievements() {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.3 }}
               className={`absolute z-20 pointer-events-none ${
-                hoveredIndex % 2 === 0 
-                  ? 'left-1/2 ml-8' 
+                hoveredIndex % 2 === 0
+                  ? 'left-1/2 ml-8'
                   : 'right-1/2 mr-8'
               }`}
               style={{ 
                 top: `${hoveredIndex * 180 + 30}px`
               }}
             >
-              <img 
-                src={hoveredImage} 
-                alt="Achievement" 
-                className="w-56 h-40 object-cover rounded-xl shadow-2xl border-4 border-purple-500"
+              <img
+                src={hoveredImage}
+                alt="Achievement"
+                className="w-56 h-40 object-cover rounded-xl shadow-2xl border-4 border-[#00b8ff]"
               />
             </motion.div>
           )}
@@ -94,7 +94,7 @@ export default function Achievements() {
                 index % 2 === 0 ? 'justify-end pr-8' : 'justify-start pl-8'
               }`}>
                 <div
-                  className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg max-w-md cursor-pointer hover:shadow-xl transition-all duration-300"
+                  className="bg-white dark:bg-[#132338] p-6 rounded-xl shadow-lg max-w-md cursor-pointer hover:shadow-xl transition-all duration-300 border border-[#00b8ff]/30 dark:border-[#15c6d5]/25"
                   onClick={() => achievement.link && window.open(achievement.link, "_blank")}
                   onMouseEnter={() => {
                     if (achievement.hoverImage) {
@@ -108,17 +108,17 @@ export default function Achievements() {
                   }}
                 >
                   <div className="flex items-center mb-4">
-                    <achievement.icon className="w-8 h-8 text-purple-600 dark:text-purple-400 mr-3" />
-                    <h3 className="text-xl font-bold dark:text-white">
+                    <achievement.icon className="w-8 h-8 text-[#00b8ff] dark:text-[#f7b733] mr-3" />
+                    <h3 className="text-xl font-bold text-[#0b132b] dark:text-white">
                       {achievement.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-[#1f3a56] dark:text-gray-200">
                     {achievement.description}
                   </p>
                 </div>
               </div>
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-white dark:border-gray-800"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#00b8ff] rounded-full border-4 border-white dark:border-[#0f1a2e]"></div>
             </motion.div>
           ))}
         </div>

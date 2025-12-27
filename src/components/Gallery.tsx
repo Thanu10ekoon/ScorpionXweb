@@ -16,6 +16,7 @@ const images = [
   '/gallery7.jpg',
   'gallery09.jpg',
   'Algothon4.jpg',
+  'Demo.jpg'
 ];
 
 export default function Gallery() {
@@ -52,7 +53,7 @@ export default function Gallery() {
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900 relative" id="gallery">
+    <section className="py-20 bg-[#eaf6ff] dark:bg-[#0a1224] relative" id="gallery">
       {/* Inline styles to hide scrollbar for Webkit browsers */}
       <style>{`
         .hide-scrollbar::-webkit-scrollbar {
@@ -65,7 +66,7 @@ export default function Gallery() {
       `}</style>
 
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-8 text-center dark:text-white">Gallery</h2>
+        <h2 className="text-4xl font-bold mb-8 text-center text-[#0b132b] dark:text-white">Gallery</h2>
         <div className="relative">
           {/* Left hover area */}
           <div

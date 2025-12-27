@@ -48,7 +48,7 @@ export default function Team() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900" id="team">
+    <section className="py-20 bg-[#eaf6ff] dark:bg-[#0d1b2a]" id="team">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -57,8 +57,8 @@ export default function Team() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 dark:text-white">Our Team</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-[#0b132b] dark:text-white">Our Team</h2>
+          <p className="text-lg text-[#1c2f4a] dark:text-gray-200 max-w-3xl mx-auto">
             Meet the brilliant minds behind Scorpion X's success
           </p>
         </motion.div>
@@ -68,13 +68,13 @@ export default function Team() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 w-full max-w-md"
+            className="bg-white dark:bg-[#111d33] rounded-xl shadow-lg p-6 w-full max-w-md border border-[#00b8ff]/30 dark:border-[#15c6d5]/25"
           >
             <div className="text-center">
-              <img src={teamMembers[0].image} alt={teamMembers[0].name} className="w-32 h-32 mx-auto mb-4 rounded-full object-cover border-4 border-purple-500" />
-              <h3 className="text-xl font-semibold mb-2 dark:text-white">{teamMembers[0].name}</h3>
-              <p className="text-purple-600 dark:text-purple-400 mb-3">{teamMembers[0].role}</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">{teamMembers[0].bio}</p>
+              <img src={teamMembers[0].image} alt={teamMembers[0].name} className="w-32 h-32 mx-auto mb-4 rounded-full object-cover border-4 border-[#00b8ff]" />
+              <h3 className="text-xl font-semibold mb-2 text-[#0b132b] dark:text-white">{teamMembers[0].name}</h3>
+              <p className="text-[#00b8ff] dark:text-[#f7b733] mb-3">{teamMembers[0].role}</p>
+              <p className="text-[#1f3a56] dark:text-gray-200 mb-4">{teamMembers[0].bio}</p>
             </div>
           </motion.div>
 
@@ -85,13 +85,13 @@ export default function Team() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+                className="bg-white dark:bg-[#111d33] rounded-xl shadow-lg p-6 border border-[#00b8ff]/30 dark:border-[#15c6d5]/25"
               >
                 <div className="text-center">
-                  <img src={member.image} alt={member.name} className="w-32 h-32 mx-auto mb-4 rounded-full object-cover border-4 border-purple-500" />
-                  <h3 className="text-xl font-semibold mb-2 dark:text-white">{member.name}</h3>
-                  <p className="text-purple-600 dark:text-purple-400 mb-3">{member.role}</p>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{member.bio}</p>
+                  <img src={member.image} alt={member.name} className="w-32 h-32 mx-auto mb-4 rounded-full object-cover border-4 border-[#00b8ff]" />
+                  <h3 className="text-xl font-semibold mb-2 text-[#0b132b] dark:text-white">{member.name}</h3>
+                  <p className="text-[#00b8ff] dark:text-[#f7b733] mb-3">{member.role}</p>
+                  <p className="text-[#1f3a56] dark:text-gray-200 mb-4">{member.bio}</p>
                 </div>
               </motion.div>
             ))}

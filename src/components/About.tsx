@@ -22,10 +22,7 @@ const features = [
     action: () => {
       const gallerySection = document.getElementById('gallery');
       if (gallerySection) {
-        gallerySection.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
+        window.open("https://www.eng.ruh.ac.lk/deie/scorpion-x-triumphs-at-codex-in-codejam-by-uom-cse/", "_blank");
       }
     }
   }
@@ -38,7 +35,7 @@ export default function About() {
   });
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900" id="about">
+    <section className="py-20 bg-[#eaf6ff] dark:bg-[#0d1b2a]" id="about">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -47,8 +44,8 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 dark:text-white">About Scorpion X</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-[#0b132b] dark:text-white">About Scorpion X</h2>
+          <p className="text-lg text-[#1c2f4a] dark:text-gray-200 max-w-3xl mx-auto">
             We are a dynamic team of innovators, developers, and problem solvers dedicated to pushing the boundaries of technology. Our mission is to create impactful solutions that drive the future of digital transformation.
           </p>
         </motion.div>
@@ -60,15 +57,15 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 hover:bg-gray-50 dark:hover:bg-gray-700"
+              className="p-6 bg-white dark:bg-[#111d33] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 hover:bg-[#f4fbff] dark:hover:bg-[#0f2842] border border-[#00b8ff]/30 dark:border-[#15c6d5]/25"
               onClick={feature.action}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <feature.icon className="w-12 h-12 text-purple-600 mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold mb-2 dark:text-white">{feature.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
-              <div className="mt-4 text-purple-600 dark:text-purple-400 text-sm font-medium opacity-70">
+              <feature.icon className="w-12 h-12 text-[#00b8ff] mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold mb-2 text-[#0b132b] dark:text-white">{feature.title}</h3>
+              <p className="text-[#1f3a56] dark:text-gray-200">{feature.description}</p>
+              <div className="mt-4 text-[#ff9f1c] dark:text-[#f7b733] text-sm font-medium opacity-90">
                 Click to explore →
               </div>
             </motion.div>
