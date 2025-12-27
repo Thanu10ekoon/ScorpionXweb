@@ -19,6 +19,14 @@ function CycloneApp() {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    const favicon = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
+    if (favicon) {
+      favicon.href = '/Cyclone/logo.jpg';
+      favicon.type = 'image/jpeg';
+    }
+  }, []);
+
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
       <nav className="fixed w-full z-50 bg-[#eaf6ff]/85 dark:bg-[#0a1c17]/92 backdrop-blur-sm border-b border-[#00b8ff]/30 dark:border-[#16f2b4]/35">

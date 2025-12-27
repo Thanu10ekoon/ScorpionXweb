@@ -20,6 +20,14 @@ function App() {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    const favicon = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
+    if (favicon) {
+      favicon.href = '/logo.png';
+      favicon.type = 'image/png';
+    }
+  }, []);
+
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
       <nav className="fixed w-full z-50 bg-[#eaf6ff]/85 dark:bg-[#0a1224]/90 backdrop-blur-sm border-b border-[#00b8ff]/30 dark:border-[#15c6d5]/30">
