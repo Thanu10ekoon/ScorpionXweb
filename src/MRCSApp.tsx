@@ -84,7 +84,7 @@ function MRCSApp() {
   };
 
   const downloadUrl =
-    'https://drive.google.com/uc?export=download&id=1t9BBcl1Gqnzyjcg9LtCHwgtFwrXNIVuY';
+    'https://universityofruhuna-my.sharepoint.com/:u:/g/personal/thanujaya_eg20225364_foe_ruh_ac_lk/IQCgWUpFQHCHR6TxVNgsgtmbARFYkInG0PeLTSeIEjSEZpI?e=E7rWBA&download=1';
 
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
