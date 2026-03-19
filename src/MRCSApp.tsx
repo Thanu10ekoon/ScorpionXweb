@@ -3,7 +3,10 @@ import { Sun, Moon, Download, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-const DOWNLOAD_COUNT_KEY = 'mrcs_download_count';
+const DOWNLOAD_COUNTER_GET_URL =
+  'https://api.countapi.xyz/get/scorpionxweb/mrcs-download-count';
+const DOWNLOAD_COUNTER_HIT_URL =
+  'https://api.countapi.xyz/hit/scorpionxweb/mrcs-download-count';
 
 declare global {
   interface Window {
@@ -21,8 +24,20 @@ function MRCSApp() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const stored = Number(window.localStorage.getItem(DOWNLOAD_COUNT_KEY) ?? '0');
-    setDownloadCount(Number.isFinite(stored) ? stored : 0);
+    const loadGlobalCount = async () => {
+      try {
+        const response = await fetch(DOWNLOAD_COUNTER_GET_URL, { method: 'GET' });
+        if (!response.ok) return;
+        const data = (await response.json()) as { value?: number };
+        if (typeof data.value === 'number' && Number.isFinite(data.value)) {
+          setDownloadCount(data.value);
+        }
+      } catch {
+        // Keep default 0 if counter API is temporarily unavailable.
+      }
+    };
+
+    void loadGlobalCount();
   }, []);
 
   useEffect(() => {
@@ -110,11 +125,23 @@ function MRCSApp() {
     'https://universityofruhuna-my.sharepoint.com/:u:/g/personal/thanujaya_eg20225364_foe_ruh_ac_lk/IQCgWUpFQHCHR6TxVNgsgtmbARFYkInG0PeLTSeIEjSEZpI?e=E7rWBA&download=1';
 
   const handleDownloadClick = () => {
-    setDownloadCount((prev) => {
-      const next = prev + 1;
-      window.localStorage.setItem(DOWNLOAD_COUNT_KEY, String(next));
-      return next;
-    });
+    const incrementGlobalCount = async () => {
+      try {
+        const response = await fetch(DOWNLOAD_COUNTER_HIT_URL, {
+          method: 'GET',
+          keepalive: true,
+        });
+        if (!response.ok) return;
+        const data = (await response.json()) as { value?: number };
+        if (typeof data.value === 'number' && Number.isFinite(data.value)) {
+          setDownloadCount(data.value);
+        }
+      } catch {
+        // Ignore telemetry failures so download flow is never blocked.
+      }
+    };
+
+    void incrementGlobalCount();
   };
 
   return (
