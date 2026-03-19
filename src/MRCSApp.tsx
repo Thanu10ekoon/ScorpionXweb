@@ -3,13 +3,36 @@ import { Sun, Moon, Download, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
+const DOWNLOAD_COUNT_KEY = 'mrcs_download_count';
+
+declare global {
+  interface Window {
+    getMRCSDownloadCount?: () => number;
+  }
+}
+
 function MRCSApp() {
   const [darkMode, setDarkMode] = useState(true);
   const [loading, setLoading] = useState(true);
+  const [downloadCount, setDownloadCount] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const playCount = useRef(0);
   const midTimer = useRef<number | null>(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const stored = Number(window.localStorage.getItem(DOWNLOAD_COUNT_KEY) ?? '0');
+    setDownloadCount(Number.isFinite(stored) ? stored : 0);
+  }, []);
+
+  useEffect(() => {
+    window.getMRCSDownloadCount = () => downloadCount;
+    document.documentElement.setAttribute('data-mrcs-download-count', String(downloadCount));
+    return () => {
+      delete window.getMRCSDownloadCount;
+      document.documentElement.removeAttribute('data-mrcs-download-count');
+    };
+  }, [downloadCount]);
 
   useEffect(() => {
     document.documentElement.classList.add('dark');
@@ -86,8 +109,16 @@ function MRCSApp() {
   const downloadUrl =
     'https://universityofruhuna-my.sharepoint.com/:u:/g/personal/thanujaya_eg20225364_foe_ruh_ac_lk/IQCgWUpFQHCHR6TxVNgsgtmbARFYkInG0PeLTSeIEjSEZpI?e=E7rWBA&download=1';
 
+  const handleDownloadClick = () => {
+    setDownloadCount((prev) => {
+      const next = prev + 1;
+      window.localStorage.setItem(DOWNLOAD_COUNT_KEY, String(next));
+      return next;
+    });
+  };
+
   return (
-    <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
+    <div className={`min-h-screen ${darkMode ? 'dark' : ''}`} data-mrcs-debug="true">
       {/* ── Intro video overlay ── */}
       {loading && (
         <div className="fixed inset-0 z-[60] bg-black">
@@ -235,6 +266,7 @@ function MRCSApp() {
               href={downloadUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleDownloadClick}
               className="inline-flex items-center gap-3 bg-gradient-to-r from-[#f45d48] via-[#f7b733] to-[#15c6d5] text-white px-10 py-4 rounded-full text-lg font-semibold hover:shadow-[0_10px_40px_rgba(21,198,213,0.35)] transition-all duration-300 group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

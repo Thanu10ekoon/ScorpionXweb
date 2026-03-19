@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Large local video exports (do not commit)
+public/Cyclone/2026-03-08 12-57-54 - Trim.mp4
+docs/Cyclone/2026-03-08 12-57-54 - Trim.mp4
