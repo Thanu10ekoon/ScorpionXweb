@@ -3,10 +3,8 @@ import { Sun, Moon, Download, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-const DOWNLOAD_COUNTER_GET_URL =
-  'https://api.counterapi.dev/v1/scorpionxweb/mrcs-download-count';
-const DOWNLOAD_COUNTER_HIT_URL =
-  'https://api.counterapi.dev/v1/scorpionxweb/mrcs-download-count/up';
+const DOWNLOAD_COUNTER_GET_URL = '/api/mrcs-download-count';
+const DOWNLOAD_COUNTER_HIT_URL = '/api/mrcs-download-count?action=hit';
 
 declare global {
   interface Window {
