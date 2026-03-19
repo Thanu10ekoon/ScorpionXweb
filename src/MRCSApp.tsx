@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const DOWNLOAD_COUNTER_GET_URL =
-  'https://api.countapi.xyz/get/scorpionxweb/mrcs-download-count';
+  'https://api.counterapi.dev/v1/scorpionxweb/mrcs-download-count';
 const DOWNLOAD_COUNTER_HIT_URL =
-  'https://api.countapi.xyz/hit/scorpionxweb/mrcs-download-count';
+  'https://api.counterapi.dev/v1/scorpionxweb/mrcs-download-count/up';
 
 declare global {
   interface Window {
@@ -28,9 +28,9 @@ function MRCSApp() {
       try {
         const response = await fetch(DOWNLOAD_COUNTER_GET_URL, { method: 'GET' });
         if (!response.ok) return;
-        const data = (await response.json()) as { value?: number };
-        if (typeof data.value === 'number' && Number.isFinite(data.value)) {
-          setDownloadCount(data.value);
+        const data = (await response.json()) as { count?: number };
+        if (typeof data.count === 'number' && Number.isFinite(data.count)) {
+          setDownloadCount(data.count);
         }
       } catch {
         // Keep default 0 if counter API is temporarily unavailable.
@@ -132,9 +132,9 @@ function MRCSApp() {
           keepalive: true,
         });
         if (!response.ok) return;
-        const data = (await response.json()) as { value?: number };
-        if (typeof data.value === 'number' && Number.isFinite(data.value)) {
-          setDownloadCount(data.value);
+        const data = (await response.json()) as { count?: number };
+        if (typeof data.count === 'number' && Number.isFinite(data.count)) {
+          setDownloadCount(data.count);
         }
       } catch {
         // Ignore telemetry failures so download flow is never blocked.
