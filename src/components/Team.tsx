@@ -6,7 +6,7 @@ const teamMembers = [
     name: "Thanujaya Tennekoon",
     role: "Lead Developer and AI Enthusiast",
     bio: "Full-stack developer with expertise in modern web technologies and competitive programming. Machine learning enthusiast focused on developing innovative AI solutions and algorithms.",
-    image: "/Thanujaya.jpg",
+    image: "/Thanu21.jpg",
     social: {
       github: "https://github.com/Thanu10ekoon",
       linkedin: "https://linkedin.com/in/thanujaya-tennekoon-b9a155271"
